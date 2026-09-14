@@ -15,7 +15,6 @@ zerops:
             | sha256sum --check --strict
           sudo tar --directory /usr/local --extract --gzip \
             --file /tmp/go1.26.1.linux-amd64.tar.gz
-          sudo npm install --global yarn@1.22.22
       buildCommands:
         - |
           set -euo pipefail
