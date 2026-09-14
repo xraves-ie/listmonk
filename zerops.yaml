@@ -2,8 +2,7 @@
 zerops:
   - setup: listmonk
     build:
-      os: ubuntu
-      base: nodejs@22
+      base: ubuntu/nodejs@22
       prepareCommands:
         - |
           set -euo pipefail
@@ -45,7 +44,7 @@ zerops:
         - sudo apk add --no-cache ca-certificates tzdata
       ports:
         - port: 9000
-          protocol: TCP
+          protocol: tcp
           httpSupport: true
       envVariables:
         LISTMONK_app__address: "0.0.0.0:9000"

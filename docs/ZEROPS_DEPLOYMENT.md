@@ -17,7 +17,7 @@ Create exactly these services in one Zerops project:
    is acceptable.
 2. `listmonk`: `alpine@3.24`, with the service hostname exactly `listmonk`.
 
-The `zerops.yaml` build phase uses `nodejs@22` with `os: ubuntu`, downloads the
+The `zerops.yaml` build phase uses `ubuntu/nodejs@22`, downloads the
 repository-required Go 1.26.1 archive from `go.dev`, verifies its pinned SHA-256,
 and runs upstream `make dist`. Only `listmonk` and
 `scripts/zerops-start.sh` are deployed. The runtime installs only CA
