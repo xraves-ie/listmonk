@@ -37,7 +37,7 @@ zerops:
           port: 9000
           path: /health
         failureTimeout: 120s
-        retryPeriod: 5s
+        retryPeriod: 10s
     run:
       base: alpine@3.23
       prepareCommands:
