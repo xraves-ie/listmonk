@@ -12,11 +12,11 @@ const branding = Object.freeze({
   logoUrl: xravesLogo,
   faviconUrl: defaultFavicon,
 
-  // These are the current upstream colors, retained as neutral placeholders.
-  // Keep them synchronized with theme.scss when final brand colors are chosen.
+  // Keep these synchronized with theme.scss for components that need colors
+  // at runtime rather than through CSS.
   colors: Object.freeze({
-    primary: '#0055d4',
-    secondary: '#36995b',
+    primary: '#95009a',
+    secondary: '#e879f9',
   }),
 });
 

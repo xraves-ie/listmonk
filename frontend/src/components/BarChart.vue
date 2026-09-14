@@ -7,6 +7,13 @@
 <script>
 import Chart from 'chart.js/auto';
 
+const chartTheme = Object.freeze({
+  surface: '#1a1b1f',
+  border: '#374151',
+  text: '#d9e3ea',
+  muted: '#9ca3af',
+});
+
 const DEFAULT = {
   type: 'bar',
   data: {},
@@ -18,16 +25,40 @@ const DEFAULT = {
         display: false,
       },
       tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#ddd',
+        backgroundColor: chartTheme.surface,
+        borderColor: chartTheme.border,
         borderWidth: 1,
-        titleColor: '#666',
-        bodyColor: '#666',
+        titleColor: chartTheme.text,
+        bodyColor: chartTheme.text,
         bodyFont: {
           size: 15,
         },
         bodySpacing: 10,
         padding: 10,
+      },
+    },
+    scales: {
+      x: {
+        border: {
+          color: chartTheme.border,
+        },
+        grid: {
+          color: chartTheme.border,
+        },
+        ticks: {
+          color: chartTheme.muted,
+        },
+      },
+      y: {
+        border: {
+          color: chartTheme.border,
+        },
+        grid: {
+          display: false,
+        },
+        ticks: {
+          color: chartTheme.muted,
+        },
       },
     },
   },

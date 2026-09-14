@@ -7,6 +7,13 @@
 <script>
 import Chart from 'chart.js/auto';
 
+const chartTheme = Object.freeze({
+  surface: '#1a1b1f',
+  border: '#374151',
+  text: '#d9e3ea',
+  muted: '#9ca3af',
+});
+
 const DEFAULT_DONUT = {
   type: 'doughnut',
   data: {},
@@ -19,11 +26,11 @@ const DEFAULT_DONUT = {
         display: false,
       },
       tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#ddd',
+        backgroundColor: chartTheme.surface,
+        borderColor: chartTheme.border,
         borderWidth: 1,
-        titleColor: '#666',
-        bodyColor: '#666',
+        titleColor: chartTheme.text,
+        bodyColor: chartTheme.text,
         bodyFont: {
           size: 15,
         },
@@ -59,10 +66,11 @@ const DEFAULT_LINE = {
         display: false,
       },
       tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#ddd',
+        backgroundColor: chartTheme.surface,
+        borderColor: chartTheme.border,
         borderWidth: 1,
-        bodyColor: '#666',
+        titleColor: chartTheme.text,
+        bodyColor: chartTheme.text,
         displayColors: true,
         bodyFont: {
           size: 15,
@@ -73,15 +81,25 @@ const DEFAULT_LINE = {
     },
     scales: {
       x: {
-        grid: {
-          display: false,
+        border: {
+          color: chartTheme.border,
         },
-      },
-      y: {
         grid: {
           display: false,
         },
         ticks: {
+          color: chartTheme.muted,
+        },
+      },
+      y: {
+        border: {
+          color: chartTheme.border,
+        },
+        grid: {
+          display: false,
+        },
+        ticks: {
+          color: chartTheme.muted,
           precision: 0,
         },
       },
@@ -102,11 +120,11 @@ const DEFAULT_BAR = {
         display: false,
       },
       tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#ddd',
+        backgroundColor: chartTheme.surface,
+        borderColor: chartTheme.border,
         borderWidth: 1,
-        titleColor: '#666',
-        bodyColor: '#666',
+        titleColor: chartTheme.text,
+        bodyColor: chartTheme.text,
         bodyFont: {
           size: 15,
         },
@@ -116,13 +134,25 @@ const DEFAULT_BAR = {
     },
     scales: {
       x: {
+        border: {
+          color: chartTheme.border,
+        },
         grid: {
           display: false,
         },
+        ticks: {
+          color: chartTheme.muted,
+        },
       },
       y: {
+        border: {
+          color: chartTheme.border,
+        },
         grid: {
           display: false,
+        },
+        ticks: {
+          color: chartTheme.muted,
         },
       },
     },

@@ -1,15 +1,31 @@
-// Placeholder palette: these values intentionally match upstream Listmonk.
-// Replace them when the final Xraves brand palette is available.
-$xraves-primary: #0055d4 !default;
-$xraves-secondary: #36995b !default;
+// Xraves' public site uses a violet accent over deep slate surfaces. Keep the
+// shared brand values here so the generated Bulma theme and custom components
+// use the same palette.
+$xraves-primary: #95009a !default;
+$xraves-secondary: #e879f9 !default;
+$xraves-background: #0b0d12 !default;
+$xraves-surface: #111827 !default;
+$xraves-surface-raised: #1a1b1f !default;
+$xraves-surface-muted: #1f2937 !default;
+$xraves-border: #374151 !default;
+$xraves-text: #f9fafb !default;
+$xraves-text-muted: #9ca3af !default;
 
 :root {
   --xraves-color-primary: #{$xraves-primary};
   --xraves-color-secondary: #{$xraves-secondary};
+  --xraves-color-background: #{$xraves-background};
+  --xraves-color-surface: #{$xraves-surface};
+  --xraves-color-surface-raised: #{$xraves-surface-raised};
+  --xraves-color-surface-muted: #{$xraves-surface-muted};
+  --xraves-color-border: #{$xraves-border};
+  --xraves-color-text: #{$xraves-text};
+  --xraves-color-text-muted: #{$xraves-text-muted};
+  color-scheme: dark;
 }
 
 .xraves-wordmark {
-  color: #111;
+  color: $xraves-text;
   display: inline-block;
   font-size: 1.05rem;
   font-weight: 600;
@@ -24,7 +40,7 @@ $xraves-secondary: #36995b !default;
 }
 
 .xraves-sidebar-footer {
-  color: #888;
+  color: $xraves-text-muted;
   font-size: 0.75rem;
   padding: 16px 25px 24px;
 }

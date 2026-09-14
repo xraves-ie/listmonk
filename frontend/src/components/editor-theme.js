@@ -5,31 +5,31 @@ import { EditorView } from '@codemirror/view';
 import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
 import { tags } from '@lezer/highlight';
 
-// VSCode Light theme color definitions
-const background = '#ffffff';
-const foreground = '#383a42';
-const caret = '#000000';
-const selection = '#add6ff';
-const selectionMatch = '#a8ac94';
-const lineHighlight = '#99999926';
-const gutterBackground = '#ffffff';
-const gutterForeground = '#0055d4';
-const gutterActiveForeground = '#0b216f';
-const keywordColor = '#0055d4';
-const controlKeywordColor = '#af00db';
-const variableColor = '#e45649';
-const classTypeColor = '#0055d4';
-const functionColor = '#795e26';
-const numberColor = '#098658';
-const operatorColor = '#383a42';
-const regexpColor = '#af00db';
-const stringColor = '#50a14f';
-const commentColor = '#999';
-const linkColor = '#0055d4';
-const invalidColor = '#e45649';
+// Xraves dark theme color definitions.
+const background = '#111827';
+const foreground = '#d9e3ea';
+const caret = '#f9fafb';
+const selection = '#95009a66';
+const selectionMatch = '#e879f933';
+const lineHighlight = '#ffffff0a';
+const gutterBackground = '#1a1b1f';
+const gutterForeground = '#9ca3af';
+const gutterActiveForeground = '#f0abfc';
+const keywordColor = '#e879f9';
+const controlKeywordColor = '#c084fc';
+const variableColor = '#fca5a5';
+const classTypeColor = '#93c5fd';
+const functionColor = '#fcd34d';
+const numberColor = '#86efac';
+const operatorColor = '#d9e3ea';
+const regexpColor = '#f0abfc';
+const stringColor = '#86efac';
+const commentColor = '#9ca3af';
+const linkColor = '#e879f9';
+const invalidColor = '#f87171';
 
-// Define the editor theme styles for VSCode Light
-const vsCodeLightTheme = /* @__PURE__ */EditorView.theme({
+// Define the editor theme styles for the Xraves dark palette.
+const xravesDarkTheme = /* @__PURE__ */EditorView.theme({
   '&': {
     color: foreground,
     backgroundColor: background,
@@ -58,9 +58,8 @@ const vsCodeLightTheme = /* @__PURE__ */EditorView.theme({
   '.cm-activeLineGutter': {
     color: gutterActiveForeground,
   },
-}, { dark: false });
-// Define the highlighting style for code in the VSCode Light theme
-const vsCodeLightHighlightStyle = /* @__PURE__ */HighlightStyle.define([
+}, { dark: true });
+const xravesDarkHighlightStyle = /* @__PURE__ */HighlightStyle.define([
   {
     tag: [
       tags.keyword,
@@ -126,10 +125,10 @@ const vsCodeLightHighlightStyle = /* @__PURE__ */HighlightStyle.define([
   { tag: tags.emphasis, fontStyle: 'italic' },
   { tag: tags.strikethrough, textDecoration: 'line-through' },
 ]);
-// Extension to enable the VSCode Light theme (both the editor theme and the highlight style)
-const vsCodeLight = [
-  vsCodeLightTheme,
-  /* @__PURE__ */syntaxHighlighting(vsCodeLightHighlightStyle),
+// Extension to enable both the editor theme and its syntax highlighting.
+const xravesDark = [
+  xravesDarkTheme,
+  /* @__PURE__ */syntaxHighlighting(xravesDarkHighlightStyle),
 ];
 
-export { vsCodeLight, vsCodeLightHighlightStyle, vsCodeLightTheme };
+export { xravesDark, xravesDarkHighlightStyle, xravesDarkTheme };

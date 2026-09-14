@@ -80,7 +80,7 @@ import 'tinymce/plugins/textcolor';
 import 'tinymce/plugins/visualblocks';
 import 'tinymce/plugins/visualchars';
 import 'tinymce/plugins/wordcount';
-import 'tinymce/skins/ui/oxide/skin.css';
+import 'tinymce/skins/ui/oxide-dark/skin.css';
 import 'tinymce/themes/silver';
 
 import { colors, uris } from '../constants';

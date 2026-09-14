@@ -16,7 +16,7 @@ import {
 } from '@codemirror/commands';
 import { defaultHighlightStyle, syntaxHighlighting, bracketMatching } from '@codemirror/language';
 import { search, searchKeymap, highlightSelectionMatches } from '@codemirror/search';
-import { vsCodeLight } from './editor-theme';
+import { xravesDark } from './editor-theme';
 
 export default {
   props: {
@@ -87,7 +87,7 @@ export default {
         syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
         EditorView.lineWrapping,
 
-        vsCodeLight,
+        xravesDark,
 
         search({
           top: true, // Places the search panel at the top of the editor
