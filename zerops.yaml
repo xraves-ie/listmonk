@@ -23,6 +23,11 @@ zerops:
           export CYPRESS_INSTALL_BINARY=0
           test "$(go env GOVERSION)" = "go$(tr -d '\r\n' < .go-version)"
           test "$(yarn --version)" = "1.22.22"
+          # Zerops restores the build workspace between pipelines. Remove only
+          # generated artifacts so make cannot reuse a stale frontend bundle or
+          # binary whose cached timestamp is newer than the checked-out source.
+          rm -rf frontend/dist
+          rm -f listmonk
           make dist YARN="yarn --frozen-lockfile --non-interactive"
           test -x ./listmonk
       deployFiles:
