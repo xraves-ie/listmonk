@@ -18,6 +18,7 @@ zerops:
       buildCommands:
         - |
           set -euo pipefail
+          export GOROOT="/usr/local/go"
           export PATH="/usr/local/go/bin:$PATH"
           export CYPRESS_INSTALL_BINARY=0
           test "$(go env GOVERSION)" = "go$(tr -d '\r\n' < .go-version)"
