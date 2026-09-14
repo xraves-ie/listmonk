@@ -2,7 +2,8 @@
 zerops:
   - setup: listmonk
     build:
-      base: ubuntu/nodejs@22
+      os: ubuntu
+      base: nodejs@22
       prepareCommands:
         - |
           set -euo pipefail
@@ -39,7 +40,7 @@ zerops:
         failureTimeout: 120s
         retryPeriod: 10s
     run:
-      base: alpine@3.23
+      base: alpine@3.24
       prepareCommands:
         - sudo apk add --no-cache ca-certificates tzdata
       ports:

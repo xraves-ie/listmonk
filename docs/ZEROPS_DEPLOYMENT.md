@@ -15,9 +15,9 @@ Create exactly these services in one Zerops project:
 1. `dblistmonk`: `postgresql:ha@18` for production. Use
    `postgresql:single@18` only for development/staging where database downtime
    is acceptable.
-2. `listmonk`: `alpine@3.23`, with the service hostname exactly `listmonk`.
+2. `listmonk`: `alpine@3.24`, with the service hostname exactly `listmonk`.
 
-The `zerops.yaml` build phase uses `ubuntu/nodejs@22`, downloads the
+The `zerops.yaml` build phase uses `nodejs@22` with `os: ubuntu`, downloads the
 repository-required Go 1.26.1 archive from `go.dev`, verifies its pinned SHA-256,
 and runs upstream `make dist`. Only `listmonk` and
 `scripts/zerops-start.sh` are deployed. The runtime installs only CA
