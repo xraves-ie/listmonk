@@ -1225,6 +1225,41 @@ section.analytics {
   .disabled {
     opacity: 0.30;
   }
+
+  .mail-servers {
+    a {
+      color: $xraves-text;
+
+      &:hover,
+      &:focus {
+        color: $xraves-secondary;
+      }
+    }
+
+    .select:not(.is-multiple):not(.is-loading)::after {
+      border-color: $xraves-text;
+    }
+
+    .b-numberinput .button.is-light {
+      background-color: $xraves-surface-muted;
+      border-color: $xraves-border;
+      color: $xraves-text;
+
+      &:hover:not(:disabled),
+      &:focus:not(:disabled) {
+        background-color: #293548;
+        border-color: $xraves-secondary;
+        color: $xraves-text;
+      }
+
+      &:disabled {
+        background-color: $xraves-surface-raised;
+        border-color: $xraves-border;
+        color: $grey-light;
+      }
+    }
+  }
+
   .box {
     margin-bottom: 30px;
   }
