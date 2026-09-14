@@ -11,7 +11,7 @@ const chartTheme = Object.freeze({
   surface: '#1a1b1f',
   border: '#374151',
   text: '#d9e3ea',
-  muted: '#9ca3af',
+  muted: '#cbd5e1',
 });
 
 const DEFAULT = {

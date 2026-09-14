@@ -15,8 +15,8 @@ const branding = Object.freeze({
   // Keep these synchronized with theme.scss for components that need colors
   // at runtime rather than through CSS.
   colors: Object.freeze({
-    primary: '#95009a',
-    secondary: '#e879f9',
+    primary: '#3730a3',
+    secondary: '#818cf8',
   }),
 });
 

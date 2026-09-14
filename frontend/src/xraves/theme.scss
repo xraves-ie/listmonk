@@ -1,15 +1,14 @@
-// Xraves' public site uses a violet accent over deep slate surfaces. Keep the
-// shared brand values here so the generated Bulma theme and custom components
-// use the same palette.
-$xraves-primary: #95009a !default;
-$xraves-secondary: #e879f9 !default;
+// Keep the shared Xraves admin colors here so the generated Bulma theme and
+// custom components use the same dark-indigo palette.
+$xraves-primary: #3730a3 !default;
+$xraves-secondary: #818cf8 !default;
 $xraves-background: #0b0d12 !default;
 $xraves-surface: #111827 !default;
 $xraves-surface-raised: #1a1b1f !default;
 $xraves-surface-muted: #1f2937 !default;
 $xraves-border: #374151 !default;
 $xraves-text: #f9fafb !default;
-$xraves-text-muted: #9ca3af !default;
+$xraves-text-muted: #cbd5e1 !default;
 
 :root {
   --xraves-color-primary: #{$xraves-primary};

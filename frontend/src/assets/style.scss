@@ -31,9 +31,9 @@ $black: $xraves-text;
 $black-bis: #f3f4f6;
 $black-ter: #e5e7eb;
 $grey-darker: #d9e3ea;
-$grey-dark: #cbd5e1;
+$grey-dark: #e2e8f0;
 $grey: $xraves-text-muted;
-$grey-light: #6b7280;
+$grey-light: #94a3b8;
 $grey-lighter: $xraves-border;
 $grey-lightest: #2a2e2c;
 $white-ter: $xraves-surface-muted;
@@ -51,22 +51,22 @@ $text-strong: $xraves-text;
 $primary: $xraves-primary;
 $primary-invert: findColorInvert($primary);
 $primary-light: rgba($primary, .20);
-$primary-dark: #720076;
+$primary-dark: #312e81;
 $green: #22c55e;
 $turquoise: $green;
 $red: #f87171;
 
 $link: $xraves-secondary;
 $link-invert: $xraves-surface;
-$link-hover: #f0abfc;
-$link-focus: #f0abfc;
-$link-active: #f5d0fe;
+$link-hover: #a5b4fc;
+$link-focus: #a5b4fc;
+$link-active: #c7d2fe;
 $input-color: $text;
 $input-background-color: $xraves-surface-raised;
 $input-border-color: $xraves-border;
 $input-hover-border-color: #4b5563;
 $input-focus-border-color: $xraves-secondary;
-$input-placeholder-color: #6b7280;
+$input-placeholder-color: #94a3b8;
 $input-disabled-background-color: $xraves-surface-muted;
 $input-disabled-border-color: $xraves-border;
 $button-color: $text;
@@ -624,8 +624,8 @@ body.is-noscroll {
     .kbd {
       font-size: 0.575rem;
       font-family: monospace;
-      color: #f5d0fe;
-      border: 1px solid #c026d3;
+      color: #c7d2fe;
+      border: 1px solid #6366f1;
       border-radius: 3px;
       padding: 1px 5px;
       display: inline-block;
@@ -794,7 +794,7 @@ body.is-noscroll {
     background: rgba($color, .13);
   }
   &.public, &.running, &.list, &.campaign, &.user, &.primary {
-    color: #f0abfc;
+    color: #a5b4fc;
     background: rgba($primary, .20);
   }
   &.finished, &.enabled, &.status-confirmed {
