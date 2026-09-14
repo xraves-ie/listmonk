@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://api.app-prg1.zerops.io/api/rest/public/settings/zerops-yml-json-schema.json
 zerops:
   - setup: listmonk
     build:
@@ -35,8 +36,8 @@ zerops:
         httpGet:
           port: 9000
           path: /health
-        failureTimeout: 120
-        retryPeriod: 5
+        failureTimeout: 120s
+        retryPeriod: 5s
     run:
       base: alpine@3.23
       prepareCommands:
@@ -58,7 +59,7 @@ zerops:
         httpGet:
           port: 9000
           path: /health
-        failureTimeout: 60
-        disconnectTimeout: 30
-        recoveryTimeout: 30
-        execPeriod: 10
+        failureTimeout: 60s
+        disconnectTimeout: 30s
+        recoveryTimeout: 30s
+        execPeriod: 10s
