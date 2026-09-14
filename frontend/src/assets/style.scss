@@ -57,6 +57,7 @@ $turquoise: $green;
 $red: #f87171;
 
 $link: $xraves-secondary;
+$link-invert: findColorInvert($link);
 $link-hover: #f0abfc;
 $link-focus: #f0abfc;
 $link-active: #f5d0fe;
