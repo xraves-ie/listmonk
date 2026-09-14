@@ -1,0 +1,64 @@
+zerops:
+  - setup: listmonk
+    build:
+      base: ubuntu/nodejs@22
+      prepareCommands:
+        - |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ca-certificates curl make tar
+          curl --fail --location --proto '=https' --tlsv1.2 \
+            --output /tmp/go1.26.1.linux-amd64.tar.gz \
+            https://go.dev/dl/go1.26.1.linux-amd64.tar.gz
+          echo '031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a  /tmp/go1.26.1.linux-amd64.tar.gz' \
+            | sha256sum --check --strict
+          sudo tar --directory /usr/local --extract --gzip \
+            --file /tmp/go1.26.1.linux-amd64.tar.gz
+          sudo npm install --global yarn@1.22.22
+      buildCommands:
+        - |
+          set -euo pipefail
+          export PATH="/usr/local/go/bin:$PATH"
+          export CYPRESS_INSTALL_BINARY=0
+          test "$(go env GOVERSION)" = "go$(tr -d '\r\n' < .go-version)"
+          test "$(yarn --version)" = "1.22.22"
+          make dist YARN="yarn --frozen-lockfile --non-interactive"
+          test -x ./listmonk
+      deployFiles:
+        - listmonk
+        - scripts/zerops-start.sh
+    deploy:
+      # Listmonk's documented upgrade sequence stops the old binary before
+      # applying schema migrations. This trades brief downtime for DB safety.
+      temporaryShutdown: true
+      readinessCheck:
+        httpGet:
+          port: 9000
+          path: /health
+        failureTimeout: 120
+        retryPeriod: 5
+    run:
+      base: alpine@3.23
+      prepareCommands:
+        - sudo apk add --no-cache ca-certificates tzdata
+      ports:
+        - port: 9000
+          protocol: TCP
+          httpSupport: true
+      envVariables:
+        LISTMONK_app__address: "0.0.0.0:9000"
+        LISTMONK_db__host: ${dblistmonk_hostname}
+        LISTMONK_db__port: ${dblistmonk_port}
+        LISTMONK_db__user: ${dblistmonk_user}
+        LISTMONK_db__password: ${dblistmonk_password}
+        LISTMONK_db__database: ${dblistmonk_dbName}
+        LISTMONK_db__ssl_mode: disable
+      start: sh scripts/zerops-start.sh
+      healthCheck:
+        httpGet:
+          port: 9000
+          path: /health
+        failureTimeout: 60
+        disconnectTimeout: 30
+        recoveryTimeout: 30
+        execPeriod: 10

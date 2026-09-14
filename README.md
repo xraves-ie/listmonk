@@ -4,6 +4,10 @@
 
 listmonk is a standalone, self-hosted, newsletter and mailing list manager. It is fast, feature-rich, and packed into a single binary. It uses a PostgreSQL database as its data store.
 
+This fork adds an isolated Xraves branding layer and a non-Docker Zerops build
+pipeline. See [Xraves customizations](docs/XRAVES_CUSTOMIZATIONS.md) and the
+[Zerops deployment guide](docs/ZEROPS_DEPLOYMENT.md).
+
 [![listmonk-dashboard](https://github.com/user-attachments/assets/689b5fbb-dd25-4956-a36f-e3226a65f9c4)](https://listmonk.app)
 
 Visit [listmonk.app](https://listmonk.app) for more info. Check out the [**live demo**](https://demo.listmonk.app).

@@ -4,8 +4,9 @@
       <template #brand>
         <div class="logo">
           <router-link :to="{ name: 'dashboard' }">
-            <img class="full" src="@/assets/logo.svg" alt="" />
-            <img class="favicon" src="@/assets/favicon.png" alt="" />
+            <img v-if="branding.logoUrl" class="full" :src="branding.logoUrl" :alt="branding.productName" />
+            <span v-else class="xraves-wordmark">{{ branding.productName }}</span>
+            <img class="favicon" :src="branding.faviconUrl" :alt="branding.productName" />
           </router-link>
         </div>
       </template>
@@ -55,6 +56,7 @@
             </b-menu>
           </div>
         </b-sidebar>
+        <p class="xraves-sidebar-footer">{{ branding.footerText }}</p>
       </section>
       <!-- sidebar-->
 
@@ -115,6 +117,7 @@ import { mapState } from 'vuex';
 import { uris } from './constants';
 
 import Navigation from './components/Navigation.vue';
+import branding from './xraves/branding';
 
 export default Vue.extend({
   name: 'App',
@@ -125,6 +128,7 @@ export default Vue.extend({
 
   data() {
     return {
+      branding,
       activeItem: {},
       activeGroup: {},
       windowWidth: window.innerWidth,
@@ -230,6 +234,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@import "xraves/theme.scss";
 @import "assets/style.scss";
 @import "assets/icons/fontello.css";
 </style>

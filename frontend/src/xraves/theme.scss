@@ -1,0 +1,42 @@
+// Placeholder palette: these values intentionally match upstream Listmonk.
+// Replace them when the final Xraves brand palette is available.
+$xraves-primary: #0055d4 !default;
+$xraves-secondary: #36995b !default;
+
+:root {
+  --xraves-color-primary: #{$xraves-primary};
+  --xraves-color-secondary: #{$xraves-secondary};
+}
+
+.xraves-wordmark {
+  color: #111;
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 52px;
+  white-space: nowrap;
+}
+
+.navbar-brand .logo img.full {
+  margin-top: 9px;
+  max-height: 34px;
+  width: auto;
+}
+
+.xraves-sidebar-footer {
+  color: #888;
+  font-size: 0.75rem;
+  padding: 16px 25px 24px;
+}
+
+@media screen and (max-width: 1100px) {
+  .xraves-wordmark {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .xraves-sidebar-footer {
+    display: none;
+  }
+}
