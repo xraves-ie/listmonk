@@ -123,6 +123,18 @@ $modal-background-background-color: rgba(3, 5, 9, .78);
 @import "buefy/src/scss/buefy";
 
 /* Custom style overrides */
+.has-text-grey-dark {
+  color: $grey-dark !important;
+}
+
+.has-text-grey {
+  color: $grey !important;
+}
+
+.has-text-grey-light {
+  color: $grey-light !important;
+}
+
 html, body {
   height: 100%;
 }
