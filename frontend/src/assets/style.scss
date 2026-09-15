@@ -99,6 +99,7 @@ $pagination-current-color: $xraves-text;
 $pagination-disabled-background-color: $xraves-surface-muted;
 $pagination-disabled-border-color: $xraves-border;
 $pagination-disabled-color: $grey-light;
+$tabs-link-active-color: $xraves-text;
 $label-color: $grey-dark;
 $title-color: $xraves-text;
 $subtitle-color: $grey-dark;
@@ -173,12 +174,14 @@ body {
 }
 
 code {
-  color: $grey;
+  background-color: $xraves-surface-muted;
+  color: $xraves-text-muted;
 }
 
 pre {
-  background: none;
+  background: $xraves-surface-raised;
   border: 1px solid $grey-lightest;
+  color: $xraves-text-muted;
 }
 
 ul.no {
@@ -641,7 +644,10 @@ body.is-noscroll {
       background: darken($primary, 15%);
     }
     &:disabled {
-      background: $grey-light;
+      background: $xraves-surface-muted;
+      border-color: $xraves-border;
+      color: $grey-light;
+      opacity: 1;
     }
     &:focus:not(:active), &.is-focused:not(:active) {
       box-shadow: 0 0 0 0.2em rgba($primary, 0.25);
@@ -686,7 +692,7 @@ body.is-noscroll {
 }
 
 .button.is-primary[disabled] {
-  border-color: $grey-light;
+  border-color: $xraves-border;
 }
 .has-addons {
   .controls .button.is-primary {
@@ -785,6 +791,10 @@ body.is-noscroll {
 
 /* Tabs */
 .b-tabs {
+  .tabs li.is-disabled {
+    opacity: .7;
+  }
+
   .tab-content {
     padding: 30px 20px;
 
@@ -821,6 +831,11 @@ body.is-noscroll {
   }
 
   &.private, &.scheduled, &.paused, &.tx, &.api {
+    $color: #fbbf24;
+    color: $color;
+    background: rgba($color, .13);
+  }
+  &.unconfirmed, &.status-unconfirmed {
     $color: #fbbf24;
     color: $color;
     background: rgba($color, .13);
