@@ -1,3 +1,15 @@
+:root {
+  --xraves-primary: #3730a3;
+  --xraves-secondary: #818cf8;
+  --xraves-background: #0b0d12;
+  --xraves-surface: #111827;
+  --xraves-surface-raised: #1a1b1f;
+  --xraves-surface-muted: #1f2937;
+  --xraves-border: #374151;
+  --xraves-text: #f9fafb;
+  --xraves-text-muted: #cbd5e1;
+  color-scheme: dark;
+}
 * {
   box-sizing: border-box;
 }
@@ -7,22 +19,26 @@ html, body {
   min-width: 320px;
 }
 body {
-  background: #f9f9f9;
+  background: var(--xraves-background);
   font-family: "Inter", "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 26px;
-  color: #111;
+  color: var(--xraves-text);
 }
 a {
-  color: #0055d4;
-  text-decoration-color: #abcbfb;
+  color: #a5b4fc;
+  text-decoration-color: var(--xraves-secondary);
 }
 a:hover {
-  color: #111;
+  color: var(--xraves-text);
+}
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--xraves-secondary);
+  outline-offset: 2px;
 }
 label {
   cursor: pointer;
-  color: #444;
+  color: var(--xraves-text);
 }
 h1,
 h2,
@@ -36,15 +52,15 @@ h4 {
 
 input[type="text"], input[type="email"], input[type="password"], select {
   padding: 10px 15px;
-  border: 1px solid #888;
+  border: 1px solid var(--xraves-border);
   border-radius: 3px;
   width: 100%;
-  box-shadow: 2px 2px 0 #f3f3f3;
-  border: 1px solid #ddd;
+  background: var(--xraves-surface-raised);
+  color: var(--xraves-text);
   font-size: 1em;
 }
   input:focus {
-    border-color: #0055d4;
+    border-color: var(--xraves-secondary);
   }
 
 input:focus::placeholder {
@@ -65,34 +81,34 @@ input[disabled] {
   font-size: 0.875em;
 }
 .error {
-  color: #FF5722;
+  color: #fca5a5;
 }
 .button {
-  background: #0055d4;
+  background: var(--xraves-primary);
   padding: 15px 30px;
   border-radius: 3px;
   border: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #ffff;
+  color: var(--xraves-text);
   display: inline-block;
   min-width: 150px;
   font-size: 1.1em;
   text-align: center;
 }
 .button:hover {
-  background: #333;
-  color: #fff;
+  background: #312e81;
+  color: var(--xraves-text);
 }
 .button.button-outline {
-  background: #fff;
-  border: 1px solid #0055d4;
-  color: #0055d4;
+  background: var(--xraves-surface-muted);
+  border: 1px solid var(--xraves-secondary);
+  color: var(--xraves-text);
 }
 .button.button-outline:hover {
-  border-color: #333;
-  background-color: #333;
-  color: #fff;
+  border-color: var(--xraves-secondary);
+  background-color: #293548;
+  color: var(--xraves-text);
 }
 
 .container {
@@ -101,26 +117,28 @@ input[disabled] {
 }
 
 .wrap {
-  background: #fff;
+  background: var(--xraves-surface);
   padding: 40px;
-  box-shadow: 2px 2px 0 #f3f3f3;
-  border: 1px solid #eee;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+  border: 1px solid var(--xraves-border);
+  border-radius: 6px;
 }
 
 .header {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--xraves-border);
   padding-bottom: 15px;
   margin-bottom: 30px;
 }
 .header .logo img {
   width: auto;
-  max-width: 150px;
+  max-width: 180px;
+  max-height: 68px;
 }
 
 .unsub-all {
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--xraves-border);
 }
 
 .row {
@@ -137,7 +155,7 @@ input[disabled] {
     margin: 0 0 15px 0;
     font-size: 0.875em;
     line-height: 1.3rem;
-    color: #888;
+    color: var(--xraves-text-muted);
     margin-left: 25px;
   }
   .form .nonce {
@@ -154,7 +172,7 @@ input[disabled] {
 }
   .archive .date {
     display: block;
-    color: #666;
+    color: var(--xraves-text-muted);
     font-size: 0.875em;
   }
   .archive li {
@@ -208,17 +226,17 @@ input[disabled] {
 footer.container {
   margin-top: 15px;
   text-align: center;
-  color: #aaa;
+  color: var(--xraves-text-muted);
   font-size: 0.775em;
   margin-top: 30px;
   margin-bottom: 30px;
 }
   footer a {
-    color: #aaa;
+    color: var(--xraves-text-muted);
     text-decoration: none;
   }
   footer a:hover {
-    color: #111;
+    color: var(--xraves-text);
   }
 
 @media screen and (max-width: 650px) {
