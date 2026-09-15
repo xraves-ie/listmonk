@@ -90,7 +90,15 @@ $menu-item-hover-background-color: $xraves-surface-muted;
 $table-color: $text;
 $table-background-color: transparent;
 $table-cell-border: 1px solid $xraves-border;
-$table-row-hover-background-color: $xraves-surface-muted;
+$table-row-hover-background-color: #1b2340;
+$table-row-active-background-color: #1b2340;
+$table-row-active-color: $xraves-text;
+$pagination-current-background-color: $xraves-primary;
+$pagination-current-border-color: $xraves-primary;
+$pagination-current-color: $xraves-text;
+$pagination-disabled-background-color: $xraves-surface-muted;
+$pagination-disabled-border-color: $xraves-border;
+$pagination-disabled-color: $grey-light;
 $label-color: $grey-dark;
 $title-color: $xraves-text;
 $subtitle-color: $grey-dark;
@@ -113,6 +121,7 @@ $menu-item-active-color: $xraves-secondary;
 
 /* Buefy */
 $modal-background-background-color: rgba(3, 5, 9, .78);
+$loading-background: rgba(3, 5, 9, .68);
 
 .line-chart {
   min-height: 300px;
@@ -150,6 +159,17 @@ body {
 :where(a, button, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid $xraves-secondary;
   outline-offset: 2px;
+}
+
+.loading-overlay .loading-icon::after {
+  border-bottom-color: $xraves-secondary;
+  border-left-color: $xraves-secondary;
+}
+
+.pagination-previous, .pagination-next, .pagination-link {
+  &[disabled], &.is-disabled {
+    opacity: 1;
+  }
 }
 
 code {
