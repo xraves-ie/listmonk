@@ -24,11 +24,11 @@
 
     {{ if .EnablePublicSubPage }}
         <div class="right">
-            <a href="{{ .RootURL }}/archive.xml">
-                <img src="{{ .RootURL }}/public/static/rss.svg" alt="RSS" class="feed"
+            <a href="/archive.xml">
+                <img src="/public/static/rss.svg" alt="RSS" class="feed"
                     width="16" height="16" />
             </a>
-            <a href="{{ .RootURL }}/subscription/form">{{ L.T "public.sub" }}</a>
+            <a href="/subscription/form">{{ L.T "public.sub" }}</a>
         </div>
     {{ end }}
 

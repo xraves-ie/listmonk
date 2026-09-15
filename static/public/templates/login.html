@@ -30,14 +30,14 @@
 			<input type="hidden" name="nonce" value="{{ .Data.Nonce }}" />
 			<input type="hidden" name="next" value="{{ .Data.NextURI }}" />
 			<p><button class="button button-outline" type="submit">
-				<img src="{{ .RootURL }}/public/static/auth/{{ .Data.OIDCProviderLogo }}" alt="" />
+				<img src="/public/static/auth/{{ .Data.OIDCProviderLogo }}" alt="" />
 				{{ .L.Ts "users.loginOIDC" "name" .Data.OIDCProvider }}
 			</button></p>
 		</div>
 	</form>
 	{{ end }}
 
-	<p class="center small"><a href="{{ .RootURL }}/admin/forgot">{{ .L.T "users.forgotPassword" }}</a></p>
+	<p class="center small"><a href="/admin/forgot">{{ .L.T "users.forgotPassword" }}</a></p>
 
 </section>
 

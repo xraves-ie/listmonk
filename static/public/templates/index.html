@@ -9,7 +9,7 @@
 
 	{{ if .EnablePublicArchive }}
 		<link rel="alternate" type="application/rss+xml" title="{{ L.T "public.archiveTitle" }} - {{ .SiteName }}"
-			href="{{ .RootURL }}/archive.xml" />
+			href="/archive.xml" />
 	{{ end }}
 
 	<link href="/public/static/style.css?v={{ .AssetVersion }}" rel="stylesheet" type="text/css" />

@@ -35,8 +35,8 @@
                         <div class="h-captcha" data-sitekey="{{ .Data.Captcha.Key }}"></div>
                         <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
                     {{ else if eq .Data.Captcha.Provider "altcha" }}
-                        <altcha-widget challengeurl="{{ .RootURL }}/api/public/captcha/altcha"></altcha-widget>
-                        <script type="module" src="{{ .RootURL }}/public/static/altcha.umd.js" async defer></script>
+                        <altcha-widget challengeurl="/api/public/captcha/altcha"></altcha-widget>
+                        <script type="module" src="/public/static/altcha.umd.js" async defer></script>
                     {{ end }}
                 </div>
             {{ end }}
@@ -45,7 +45,7 @@
 
                 {{ if .EnablePublicArchive }}
                     <p class="right">
-                        <a href="{{ .RootURL }}/archive">{{ L.T "public.archiveTitle" }}</a>
+                        <a href="/archive">{{ L.T "public.archiveTitle" }}</a>
                     </p>
                 {{ end }}
             </p>
